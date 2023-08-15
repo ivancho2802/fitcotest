@@ -153,15 +153,14 @@ DO
 
 DOING
 - @angular/cdk
-- @angular/forms
-- @angular/http -> @angular/common/http
-- @angular/platform-browser
-- @angular/platform-browser-dynamic
-- @angular/router
-
 
 DOES
 
+- @angular/http -> @angular/common/http
+- @angular/platform-browser
+- @angular/platform-browser-dynamic
+- @angular/forms
+- @angular/router
 - @angular/common
 - @angular/compiler
 - @angular/compiler-cli

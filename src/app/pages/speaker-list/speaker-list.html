@@ -16,37 +16,62 @@
 
   <ion-grid fixed>
     <ion-row>
-      <ion-col size="12" size-md="6" *ngFor="let speaker of speakers">
-        <ion-card class="speaker-card">
-          <ion-card-header>
-            <ion-item detail="false" lines="none" class="speaker-item" routerLink="/app/tabs/speakers/speaker-details/{{speaker.id}}">
-              <ion-avatar slot="start">
-                <img [src]="speaker.profilePic" [alt]="speaker.name + ' profile picture'">
-              </ion-avatar>
-              <ion-label>
-                <h2>{{speaker.name}}</h2>
-                <p>{{speaker.title}}</p>
-              </ion-label>
-            </ion-item>
-          </ion-card-header>
 
-          <ion-card-content>
-            <ion-list lines="none">
-              <ion-item *ngFor="let session of speaker.sessions" detail="false" routerLink="/app/tabs/speakers/session/{{session.id}}">
-                <ion-label>
-                  <h3>{{session.name}}</h3>
-                </ion-label>
-              </ion-item>
+      <ion-col size="12" size-md="6" *ngFor="let speaker of speakers; let index = index;">
+        <cdk-accordion class="example-accordion">
 
-              <ion-item detail="false" routerLink="/app/tabs/speakers/speaker-details/{{speaker.id}}">
-                <ion-label>
-                  <h3>About {{speaker.name}}</h3>
-                </ion-label>
-              </ion-item>
-            </ion-list>
-          </ion-card-content>
-        </ion-card>
+          <cdk-accordion-item #accordionItem="cdkAccordionItem" class="example-accordion-item" role="button"
+            tabindex="0" [attr.id]="'accordion-header-' + index" [attr.aria-expanded]="accordionItem.expanded"
+            [attr.aria-controls]="'accordion-body-' + index">
+
+
+            <ion-card class="speaker-card">
+              <ion-card-header>
+
+                <ion-item detail="false" lines="none" class="speaker-item">
+                  <ion-avatar slot="start" routerLink="/app/tabs/speakers/speaker-details/{{speaker.id}}">
+                    <img [src]="speaker.profilePic" [alt]="speaker.name + ' profile picture'">
+                  </ion-avatar>
+                  <ion-label>
+                    <h2>{{speaker.name}}</h2>
+                    <p>{{speaker.title}}</p>
+                  </ion-label>
+                  <ion-note  (click)="accordionItem.toggle()">
+                    Click to {{ accordionItem.expanded ? 'close' : 'open' }}
+                  </ion-note>
+                </ion-item>
+              </ion-card-header>
+
+              <ion-card-content>
+
+                <div class="example-accordion-item-body" role="region"
+                  [style.display]="accordionItem.expanded ? '' : 'none'" [attr.id]="'accordion-body-' + index"
+                  [attr.aria-labelledby]="'accordion-header-' + index">
+                  <ion-list lines="none">
+                    <ion-item *ngFor="let session of speaker.sessions" detail="false"
+                      routerLink="/app/tabs/speakers/session/{{session.id}}">
+                      <ion-label>
+                        <h3>{{session.name}}</h3>
+                      </ion-label>
+                    </ion-item>
+  
+                    <ion-item detail="false" routerLink="/app/tabs/speakers/speaker-details/{{speaker.id}}">
+                      <ion-label>
+                        <h3>About {{speaker.name}}</h3>
+                      </ion-label>
+                    </ion-item>
+                  </ion-list>
+                  
+                </div>
+
+
+              </ion-card-content>
+            </ion-card>
+          </cdk-accordion-item>
+
+        </cdk-accordion>
       </ion-col>
+
     </ion-row>
   </ion-grid>
 </ion-content>

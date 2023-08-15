@@ -8,6 +8,7 @@ import { ConferenceData } from '../../providers/conference-data';
 })
 export class SpeakerListPage {
   speakers: any[] = [];
+  expandedIndex = 0;
 
   constructor(public confData: ConferenceData) {}
 

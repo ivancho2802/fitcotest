@@ -1,4 +1,4 @@
-package com.ionicframework.conferenceapp;
+package com.tidiaz.testfitco;
 
 import com.getcapacitor.BridgeActivity;
 

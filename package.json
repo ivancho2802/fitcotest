@@ -1,8 +1,8 @@
 {
-  "name": "ionic-conference-app",
+  "name": "tidiaz-test-fitco",
   "version": "0.0.0",
-  "description": "Ionic Conference App",
-  "author": "Ionic Team <hi@ionicframework.com>",
+  "description": "Tidiaz Test Fitco App",
+  "author": "Ionic Team <ivancho2802@hotmail.com>",
   "license": "Apache-2.0",
   "scripts": {
     "ng": "ng",
@@ -17,10 +17,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/ionic-conference-app.git"
+    "url": "https://github.com/ionic-team/tidiaz-test-fitco.git"
   },
   "private": true,
   "dependencies": {
+    "@angular/cdk": "^16.2.0",
     "@angular/common": "^16.0.0",
     "@angular/core": "^16.0.0",
     "@angular/forms": "^16.0.0",

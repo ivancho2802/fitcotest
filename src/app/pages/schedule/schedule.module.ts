@@ -6,6 +6,8 @@ import { SchedulePage } from './schedule';
 import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 import { SchedulePageRoutingModule } from './schedule-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { NgChartsModule } from 'ng2-charts';
+
 
 @NgModule({
     imports: [
@@ -13,7 +15,8 @@ import { TranslateModule } from '@ngx-translate/core';
         CommonModule,
         FormsModule,
         IonicModule,
-        SchedulePageRoutingModule
+        SchedulePageRoutingModule,
+        NgChartsModule
     ],
     declarations: [
         SchedulePage,

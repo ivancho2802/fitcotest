@@ -5,6 +5,7 @@ import { AlertController, IonList, IonRouterOutlet, LoadingController, ModalCont
 import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 import { ConferenceData } from '../../providers/conference-data';
 import { UserData } from '../../providers/user-data';
+import { ChartConfiguration, ChartOptions } from 'chart.js';
 
 @Component({
   selector: 'page-schedule',
@@ -24,6 +25,34 @@ export class SchedulePage implements OnInit {
   groups: any = [];
   confDate: string;
   showSearchbar: boolean;
+
+  public lineChartData: ChartConfiguration<'line'>['data'] = {
+    labels: [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July'
+    ],
+    datasets: [
+      {
+        data: [ 65, 59, 80, 81, 56, 55, 40 ],
+        label: 'Series A',
+        fill: true,
+        tension: 0.5,
+        borderColor: 'black',
+        backgroundColor: 'rgba(255,0,0,0.3)'
+      }
+    ]
+  };
+
+  public lineChartOptions: ChartOptions<'line'> = {
+    responsive: false
+  };
+
+  public lineChartLegend = true;
 
   constructor(
     public alertCtrl: AlertController,
@@ -52,7 +81,57 @@ export class SchedulePage implements OnInit {
     this.confData.getTimeline(this.dayIndex, this.queryText, this.excludeTracks, this.segment).subscribe((data: any) => {
       this.shownSessions = data.shownSessions;
       this.groups = data.groups;
+      console.log("this.groups", this.groups)
+      this.makeObjectStacts(this.groups)
     });
+  }
+
+  /* 
+  lineChartData: ChartConfiguration<'line'>['data'] = {
+    labels: [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July'
+    ],
+    datasets: [
+      {
+        data: [ 65, 59, 80, 81, 56, 55, 40 ],
+        label: 'Series A',
+        fill: true,
+        tension: 0.5,
+        borderColor: 'black',
+        backgroundColor: 'rgba(255,0,0,0.3)'
+      }
+    ]
+  };
+  
+  */
+
+  makeObjectStacts(groups){
+
+    let labels = groups.map(el=> el.time)
+    let datasets = groups.map(el=> el.sessions.length + 1)
+
+    console.log("labels", labels)
+    console.log("datasets", datasets)
+
+    this.lineChartData = {
+      labels: labels,
+      datasets: [
+        {
+          data: datasets,
+          label: 'Sessions',
+          fill: true,
+          tension: 0.5,
+          borderColor: 'black',
+          backgroundColor: 'rgba(255,0,0,0.3)'
+        }
+      ]
+    };
   }
 
   async presentFilter() {

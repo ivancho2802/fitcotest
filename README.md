@@ -124,7 +124,6 @@ DO
 - ng-multiselect-dropdown
 - ng-pick-datetime
 - ng-zorro-antd
-- ng2-charts
 - ng2-completer
 - ng2-select
 - ng2-webstorage
@@ -149,6 +148,7 @@ DO
 - web-vitals
 
 DOING
+- ng2-charts
 
 DOES
 

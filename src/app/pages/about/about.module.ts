@@ -6,15 +6,17 @@ import { IonicModule } from '@ionic/angular';
 import { AboutPage } from './about';
 import { PopoverPage } from '../about-popover/about-popover';
 import { AboutPageRoutingModule } from './about-routing.module';
+import { QRCodeModule } from 'angularx-qrcode';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        IonicModule,
-        AboutPageRoutingModule
-    ],
-    declarations: [AboutPage, PopoverPage],
-    bootstrap: [AboutPage]
+  imports: [
+    QRCodeModule,
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    AboutPageRoutingModule
+  ],
+  declarations: [AboutPage, PopoverPage],
+  bootstrap: [AboutPage]
 })
-export class AboutModule {}
+export class AboutModule { }

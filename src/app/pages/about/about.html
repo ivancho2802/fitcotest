@@ -20,6 +20,33 @@
     <div class="about-image seattle" [ngStyle]="location === 'seattle' && {'opacity': '1'}"></div>
   </div>
 
+  <ion-item>
+    <ion-button (click)="showQr()">
+      Show Qr of Repo Github
+    </ion-button>
+  </ion-item>
+
+  <ion-card *ngIf="show" class="ion-text-center">
+    <qrcode 
+      [width]="256" 
+      [margin]="2"
+      [errorCorrectionLevel]="'M'"
+      [colorLight]="'#f4f5f8'"
+      [imageSrc]="'./assets/img/appicon.svg'"
+      [imageHeight]="50"
+      [title]="'Qr Data'"
+      [imageWidth]="50"
+      cssClass="aclass"
+      [qrdata]="qrSrc">
+    </qrcode>
+
+    <ion-button (click)="showQrBrowser()">
+      See with browser
+    </ion-button>
+
+  </ion-card>
+
+
   <div class="about-info">
     <h3 class="ion-padding-top ion-padding-start">About</h3>
 

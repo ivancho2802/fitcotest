@@ -10,17 +10,17 @@ import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
-    imports: [
-        TranslateModule.forChild(),
-        CommonModule,
-        FormsModule,
-        IonicModule,
-        SchedulePageRoutingModule,
-        NgChartsModule
-    ],
-    declarations: [
-        SchedulePage,
-        ScheduleFilterPage
-    ]
+  imports: [
+    TranslateModule.forChild(),
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    SchedulePageRoutingModule,
+    NgChartsModule
+  ],
+  declarations: [
+    SchedulePage,
+    ScheduleFilterPage
+  ]
 })
 export class ScheduleModule { }

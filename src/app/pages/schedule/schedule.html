@@ -48,15 +48,16 @@
     </ion-toolbar>
   </ion-header>
 
-  <canvas baseChart  height="400" width="400"
-    class="chatresponsive"
-    [type]="'line'"
-    [data]="lineChartData"
-    [options]="lineChartOptions"
-    [legend]="lineChartLegend">
-  </canvas>
-
   <ion-list #scheduleList [hidden]="shownSessions === 0">
+
+    <canvas baseChart  height="400" width="400"
+      class="chatresponsive"
+      [type]="'line'"
+      [data]="lineChartData"
+      [options]="lineChartOptions"
+      [legend]="lineChartLegend">
+    </canvas>
+
     <ion-item-group *ngFor="let group of groups" [hidden]="group.hide">
       <ion-item-divider sticky>
         <ion-label>

@@ -2,8 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 import { UserData } from './user-data';
+import { apiurl } from './config';
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,12 @@ export class ConferenceData {
       return of(this.data);
     } else {
       return this.http
-        .get('assets/data/data.json')
+        .get(apiurl + 'schedule')
         .pipe(map(this.processData, this));
+        /* 
+      return this.http
+        .get('assets/data/data.json')
+        .pipe(map(this.processData, this)); */
     }
   }
 

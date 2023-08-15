@@ -16,6 +16,8 @@ export class AboutPage {
   selectOptions = {
     header: 'Select a Location'
   };
+  show = false
+  qrSrc = "https://github.com/ivancho2802/fitcotest"
 
   constructor(public popoverCtrl: PopoverController) { }
 
@@ -25,5 +27,13 @@ export class AboutPage {
       event
     });
     await popover.present();
+  }
+
+  showQr(){
+    this.show = !this.show
+  }
+
+  showQrBrowser(){
+    window.open(this.qrSrc, '_blank', 'location=yes');
   }
 }

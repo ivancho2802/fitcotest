@@ -74,6 +74,16 @@ See [CONTRIBUTING.md](https://github.com/ionic-team/tidiaz-test-fitco/blob/main/
 
 ## Deploying
 
+### Backend deploy 
+
+  github clone https://github.com/ivancho2802/fitcotest
+
+  cd fitcotest
+
+  npm i --save
+
+  npm start
+
 ### Progressive Web App
 
 1. Run `ionic build --prod`
@@ -93,91 +103,26 @@ See [CONTRIBUTING.md](https://github.com/ionic-team/tidiaz-test-fitco/blob/main/
 DO
 **Frontend libraries (UI, UX, State Management, Routing, etc.):**
 
-- @ng-select/ng-select
-- @emotion/core
-- @emotion/styled
-- @ng-bootstrap/ng-bootstrap
-- @angular/material
-- @stripe/stripe-js
-- @toverux/ngx-sweetalert2
-- @zoomus/websdk
-- angular-cropperjs
-- angular2-fullcalendar
-- angular2-jwt
-- angularfire2
-- animate.css
-- bootstrap
-- bootstrap-icons
-- bootstrap-next
-- bootstrap-sass
-- classnames
-- codemirror
-- emotion
-- ionicons
-- jquery
-- jquery-slimscroll
-- jquery-sparkline
-- jquery.sticky
-- jvectormap
-- lodash
-- ng-intercom
-- ng-multiselect-dropdown
-- ng-pick-datetime
-- ng-zorro-antd
-- ng2-completer
-- ng2-select
-- ng2-webstorage
-- ngx-bootstrap
-- ngx-image-compress
-- ngx-mask
-- ngx-owl-carousel-o
-- ngx-pagination
-- ngx-qrcode2
-- ngx-quill
-- ngx-tags-input
-- ngx-ui-switch
-- ngx-useful-swiper
-- nprogress
-- peity
-- select2
-- select2-bootstrap-theme
-- slick-carousel
-- swiper
-- toastr
-- uui
-- web-vitals
+OTHERS
 
 DOING
-- ng2-charts
 
 DOES
 
-- @ngx-translate/core
-- @ngx-translate/http-loader
-- @angular/cdk
-- @angular/http -> @angular/common/http
-- @angular/platform-browser
-- @angular/platform-browser-dynamic
-- @angular/forms
-- @angular/router
-- @angular/common
-- @angular/compiler
-- @angular/compiler-cli
-- @angular/core
-- @ionic/angular
-- @angular/animations
+1. ng2-charts
+2. @ngx-translate/core, @ngx-translate/http-loader
+3. @angular/cdk
+4. @angular/http -> @angular/common/http
+5. @angular/platform-browser,  @angular/platform-browser-dynamic
+6. @angular/forms
+7. @angular/router
+8. ngx-qrcode2 ->  angularx-qrcode
+9. ionicons
 
 
 **Backend libraries (Server-Side, API, Middleware, etc.):**
 
 DO
-
-DOING
-
-DOES
-
-
-- @godaddy/terminus
 - @nestjs/common
 - @nestjs/config
 - @nestjs/core
@@ -185,42 +130,11 @@ DOES
 - @nestjs/swagger
 - @nestjs/terminus
 - @nestjs/typeorm
-- @sendgrid/mail
-- @sentry/node
-- async
-- axios
-- body-parser
-- compression
-- cookie-parser
 - cors
-- cron
-- dotenv
-- express
-- express-async-handler
-- express-fileupload
-- express-session
-- express-winston
-- helmet
-- https
-- ioredis
-- jsonwebtoken
-- multer
-- mysql
-- mysql2
-- nodemailer
-- nodemailer-sendgrid-transport
-- pmx
-- request
-- request-promise
-- sequelize
-- sequelize-cli
-- serve-favicon
-- socket.io
-- ts-md5
-- typeorm
-- uuid
-- web3
-- zeromq
+
+DOING
+
+DOES
 
 **Testing libraries:**
 
@@ -237,12 +151,6 @@ DOES
 **Build, Transpile, Package and Deploy libraries:**
 
 DO
-
-DOING
-
-DOES
-
-- @babel/polyfill
 - @capacitor/android
 - @capacitor/app
 - @capacitor/core
@@ -250,151 +158,34 @@ DOES
 - @capacitor/ios
 - @capacitor/keyboard
 - @capacitor/status-bar
-- @ionic/pro
-- @ionic/storage
-- @kushki/js
-- @loadable/component
-- @mailchimp/mailchimp_marketing
-- @sls-next/serverless-component
-- babel-plugin-add-module-exports
-- babel-polyfill
-- babel-register
-- card-validator
-- cordova-android
-- cordova-android-firebase-gradle-release
-- cordova-android-play-services-gradle-release
-- cordova-browser
-- cordova-custom-config
-- cordova-ios
-- cordova-plugin-add-swift-support
-- cordova-plugin-ionic
-- cordova-plugin-ionic-webview
-- file-loader
-- jetifier
-- next
-- next-compose-plugins
-- next-optimized-images
-- next-videos
-- now
-- responsive-loader
-- sass
-- serverless-next.js
-- sharp
-- start-server-webpack-plugin
-- stripe-angular
-- stripe-stateful-mock
-- sw-toolbox
-- webp-loader
+
+DOING
+
+DOES
+
 **Data Access and Manipulation libraries:**
 
-
-
 DO
 
 DOING
 
 DOES
 
-
-- @hubspot/api-client
-- @ionic-native/barcode-scanner
-- @ionic-native/camera
-- @ionic-native/core
-- @ionic-native/device
-- @ionic-native/firebase
-- @ionic-native/google-analytics
-- @ionic-native/local-notifications
-- @ionic-native/push
-- @ionic-native/splash-screen
-- @ionic-native/status-bar
-- aws-sdk
-- firebase
-- firebase-admin
-- got
-- ibm-cos-sdk
-- lodash
-- mercadopago
-- mixpanel-browser
-- moment
-- moment-duration-format
-- pg
-- phonegap-plugin-barcodescanner
-- pusher
-- quill
-- quill-emoji
-- quill-image-resize
-- quill-image-resize-module
-- quill-image-upload
-- read-excel-file
-- rimraf
-- rxjs
-- rxjs-compat
-- sendgrid
-- socket.io-client
-- stripe
-- stripe-stateful-mock
-- xlsx
-- xml2js
 **Utilities:**
 
-
 DO
 
 DOING
 
 DOES
 
-- @types/aws-sdk
-- @types/google.analytics
-- @types/mixpanel-browser
-- @types/node
-- @types/nodemailer
-- @types/stripe
-- @types/swiper
-- @vimeo/player
-- base-64
-- bcrypt
-- blob-stream
-- colors
-- crypto
-- crypto-js
-- cryptr
-- debug
-- deepmerge
-- error-stack-parser
-- file-saver
-- font-awesome
-- fs
-- jade
-- js-md5
-- json2xls
-- jwt-simple
-- linebreak
-- log4js
-- md5
-- path
-- read-excel-file
-- readline
-- reflect-metadata
-- stacktrace-js
-- sweetalert
-- sweetalert2
-- swr
-- ts-helpers
-- tslib
-- tus-js-client
-- zone.js
+
 **Data Visualization libraries:**
 
-
 DO
+- chart.js
+- ng2-charts
 
 DOING
 
 DOES
-
-
-- chart.js
-- chartjs-plugin-datalabels
-- fullcalendar
-- ng2-charts

@@ -1,5 +1,5 @@
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
 import { IonicModule } from '@ionic/angular';
@@ -13,6 +13,7 @@ import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgChartsModule } from 'ng2-charts';
+import { QRCodeModule } from 'angularx-qrcode';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -20,6 +21,7 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
   imports: [
+    QRCodeModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -37,10 +39,11 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    NgChartsModule
+    NgChartsModule,
   ],
   declarations: [AppComponent],
   providers: [InAppBrowser],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}

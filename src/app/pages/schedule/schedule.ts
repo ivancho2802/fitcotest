@@ -38,7 +38,7 @@ export class SchedulePage implements OnInit {
     ],
     datasets: [
       {
-        data: [ 65, 59, 80, 81, 56, 55, 40 ],
+        data: [65, 59, 80, 81, 56, 55, 40],
         label: 'Series A',
         fill: true,
         tension: 0.5,
@@ -111,10 +111,10 @@ export class SchedulePage implements OnInit {
   
   */
 
-  makeObjectStacts(groups){
+  makeObjectStacts(groups) {
 
-    let labels = groups.map(el=> el.time)
-    let datasets = groups.map(el=> el.sessions.length + 1)
+    let labels = groups.map(el => el.time)
+    let datasets = groups.map(el => el.sessions.length + 1)
 
     console.log("labels", labels)
     console.log("datasets", datasets)

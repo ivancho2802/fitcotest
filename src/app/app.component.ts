@@ -1,15 +1,12 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { SwUpdate } from '@angular/service-worker';
-
 import { MenuController, Platform, ToastController } from '@ionic/angular';
-
 import { StatusBar } from '@capacitor/status-bar';
 import { SplashScreen } from '@capacitor/splash-screen';
-
 import { Storage } from '@ionic/storage-angular';
-
 import { UserData } from './providers/user-data';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +15,8 @@ import { UserData } from './providers/user-data';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
+  currentLanguage = 'en'
+
   appPages = [
     {
       title: 'Schedule',
@@ -51,7 +50,8 @@ export class AppComponent implements OnInit {
     private userData: UserData,
     private swUpdate: SwUpdate,
     private toastCtrl: ToastController,
-  ) {
+    private translate: TranslateService,
+    ) {
     this.initializeApp();
   }
 
@@ -79,6 +79,9 @@ export class AppComponent implements OnInit {
         .then(() => this.swUpdate.activateUpdate())
         .then(() => window.location.reload());
     });
+
+    this.translate.setDefaultLang('en');
+
   }
 
   initializeApp() {
@@ -126,5 +129,11 @@ export class AppComponent implements OnInit {
     this.menu.enable(false);
     this.storage.set('ion_did_tutorial', false);
     this.router.navigateByUrl('/tutorial');
+  }
+
+  shangeLanguage(){
+    this.currentLanguage = this.currentLanguage === 'en' ? 'es' : 'en';
+    this.translate.setDefaultLang(this.currentLanguage);
+    
   }
 }

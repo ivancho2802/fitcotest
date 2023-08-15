@@ -92,15 +92,12 @@ See [CONTRIBUTING.md](https://github.com/ionic-team/tidiaz-test-fitco/blob/main/
 
 DO
 **Frontend libraries (UI, UX, State Management, Routing, etc.):**
-- @angular/animations
 
 - @ng-select/ng-select
 - @emotion/core
 - @emotion/styled
 - @ng-bootstrap/ng-bootstrap
 - @angular/material
-- @ngx-translate/core
-- @ngx-translate/http-loader
 - @stripe/stripe-js
 - @toverux/ngx-sweetalert2
 - @zoomus/websdk
@@ -152,10 +149,12 @@ DO
 - web-vitals
 
 DOING
-- @angular/cdk
 
 DOES
 
+- @ngx-translate/core
+- @ngx-translate/http-loader
+- @angular/cdk
 - @angular/http -> @angular/common/http
 - @angular/platform-browser
 - @angular/platform-browser-dynamic
@@ -166,26 +165,7 @@ DOES
 - @angular/compiler-cli
 - @angular/core
 - @ionic/angular
-
-- @stripe/react-stripe-js
-- @u-wave/react-vimeo
-- react
-- react-bootstrap
-- react-break
-- react-codemirror2
-- react-device-detect
-- react-dom
-- react-google-login
-- react-hot-toast
-- react-icons
-- react-infinite-scroll-component
-- react-input-mask
-- react-lazy-load-image-component
-- react-modal-video
-- react-player
-- react-select
-- react-slick
-- reactstrap
+- @angular/animations
 
 
 **Backend libraries (Server-Side, API, Middleware, etc.):**
@@ -251,7 +231,6 @@ DOING
 DOES
 
 - @testing-library/jest-dom
-- @testing-library/react
 - @testing-library/user-event
 
 
@@ -295,7 +274,6 @@ DOES
 - next
 - next-compose-plugins
 - next-optimized-images
-- next-react-svg
 - next-videos
 - now
 - responsive-loader

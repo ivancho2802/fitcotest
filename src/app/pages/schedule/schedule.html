@@ -5,20 +5,21 @@
     </ion-buttons>
     <ion-segment *ngIf="ios" [(ngModel)]="segment" (ionChange)="updateSchedule()">
       <ion-segment-button value="all">
-        All
+        {{'ALL' | translate}}
       </ion-segment-button>
       <ion-segment-button value="favorites">
-        Favorites
+        {{'FAVORITES' | translate}}
       </ion-segment-button>
     </ion-segment>
-    <ion-title *ngIf="!ios && !showSearchbar">Schedule</ion-title>
-    <ion-searchbar *ngIf="showSearchbar" showCancelButton="always" [(ngModel)]="queryText" (ionInput)="updateSchedule()" (ionCancel)="showSearchbar = false" placeholder="Search"></ion-searchbar>
+    <ion-title *ngIf="!ios && !showSearchbar">{{'SCHEDULE'| translate}}</ion-title>
+    <ion-searchbar *ngIf="showSearchbar" showCancelButton="always" [(ngModel)]="queryText" (ionInput)="updateSchedule()"
+      (ionCancel)="showSearchbar = false" placeholder="{{'SEARCH_TITLE' | translate}}"></ion-searchbar>
     <ion-buttons slot="end">
       <ion-button *ngIf="!ios && !showSearchbar" (click)="showSearchbar = true">
         <ion-icon slot="icon-only" name="search"></ion-icon>
       </ion-button>
       <ion-button *ngIf="!showSearchbar" (click)="presentFilter()">
-        <span *ngIf="ios">Filter</span>
+        <span *ngIf="ios">{{'FILTER'| translate}}</span>
         <span *ngIf="!ios">
           <ion-icon slot="icon-only" name="options"></ion-icon>
         </span>
@@ -28,10 +29,10 @@
   <ion-toolbar *ngIf="!ios">
     <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
       <ion-segment-button value="all">
-        All
+        {{'ALL' | translate}}
       </ion-segment-button>
       <ion-segment-button value="favorites">
-        Favorites
+        {{'FAVORITES' | translate}}
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
@@ -40,10 +41,10 @@
 <ion-content fullscreen="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Schedule</ion-title>
+      <ion-title size="large">{{'SCHEDULE'| translate}}</ion-title>
     </ion-toolbar>
     <ion-toolbar>
-      <ion-searchbar [(ngModel)]="queryText" (ionInput)="updateSchedule()" placeholder="Search"></ion-searchbar>
+      <ion-searchbar [(ngModel)]="queryText" (ionInput)="updateSchedule()" placeholder="{{'SEARCH_TITLE' | translate}}"></ion-searchbar>
     </ion-toolbar>
   </ion-header>
 
@@ -67,11 +68,11 @@
         </ion-item>
         <ion-item-options>
           <ion-item-option color="favorite" (click)="addFavorite(slidingItem, session)" *ngIf="segment === 'all'">
-            Favorite
+            {{'FAVORITE' | translate}}
           </ion-item-option>
           <ion-item-option color="danger" (click)="removeFavorite(slidingItem, session, 'Remove Favorite')"
             *ngIf="segment === 'favorites'">
-            Remove
+            {{'REMOVE' | translate}}
           </ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
@@ -79,7 +80,7 @@
   </ion-list>
 
   <ion-list-header [hidden]="shownSessions > 0">
-    No Sessions Found
+    {{'NOT_FOUND_RESULTS' | translate}}
   </ion-list-header>
 
   <ion-fab slot="fixed" vertical="bottom" horizontal="end" #fab>

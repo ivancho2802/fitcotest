@@ -5,13 +5,13 @@
       <ion-content>
         <ion-list lines="none">
           <ion-list-header>
-            Conference
+            Slack {{'SIMULATOR' | translate}}
           </ion-list-header>
           <ion-menu-toggle autoHide="false" *ngFor="let p of appPages; let i = index">
             <ion-item [routerLink]="p.url" routerLinkActive="selected" routerDirection="root" detail="false">
               <ion-icon slot="start" [name]="p.icon + '-outline'"></ion-icon>
               <ion-label>
-                {{p.title}}
+                {{p.title | uppercase | translate}}
               </ion-label>
             </ion-item>
 
@@ -20,14 +20,14 @@
 
         <ion-list *ngIf="loggedIn" lines="none">
           <ion-list-header>
-            Account
+            {{'USER ACCOUNT' | translate}}
           </ion-list-header>
 
           <ion-menu-toggle autoHide="false">
             <ion-item routerLink="/account" routerLinkActive="active" routerDirection="root" detail="false">
               <ion-icon slot="start" name="person"></ion-icon>
               <ion-label>
-                Account
+                {{'ACCOUNT' | translate}}
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
@@ -36,7 +36,7 @@
             <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
               <ion-icon slot="start" name="help"></ion-icon>
               <ion-label>
-                Support
+                {{'SUPPORT' | translate}}
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
@@ -45,7 +45,7 @@
             <ion-item button (click)="logout()" detail="false">
               <ion-icon slot="start" name="log-out"></ion-icon>
               <ion-label>
-                Logout
+                {{'LOGOUT' | translate}}
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
@@ -54,7 +54,7 @@
 
         <ion-list *ngIf="!loggedIn" lines="none">
           <ion-list-header>
-            Account
+            {{'ACCOUNT' | translate}}
           </ion-list-header>
 
           <ion-menu-toggle autoHide="false">
@@ -70,7 +70,7 @@
             <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
               <ion-icon slot="start" name="help"></ion-icon>
               <ion-label>
-                Support
+                {{'SUPPORT' | translate}}
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
@@ -94,6 +94,16 @@
 
         <ion-list lines="none">
           <ion-list-header>
+            {{'LANGUAGE' | translate}}
+          </ion-list-header>
+          <ion-item button (click)="shangeLanguage()" detail="false">
+            <ion-icon slot="start" name="language-outline"></ion-icon>
+            <ion-toggle [checked]="currentLanguage === 'en' ? true : false">{{'CURRENT' | translate}}: {{currentLanguage
+              | translate}}</ion-toggle>
+            <br /><br />
+          </ion-item>
+
+          <ion-list-header>
             Tutorial
           </ion-list-header>
           <ion-menu-toggle autoHide="false">
@@ -102,6 +112,8 @@
               <ion-label>Show Tutorial</ion-label>
             </ion-item>
           </ion-menu-toggle>
+
+
         </ion-list>
       </ion-content>
     </ion-menu>
